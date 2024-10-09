@@ -6,13 +6,10 @@ import Login from './routes/Login';
 
 function App() {
   const { token } = useContext(Context);
-
   return (
     <>
-      <Login />
-      {token && <Dashboard />}
+      {token ? <Dashboard /> : <Login />}
     </>
   );
 }
-
 export default App;
