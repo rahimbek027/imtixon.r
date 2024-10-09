@@ -19,6 +19,7 @@ function Signup() {
     e.target.reset();
     toast.success("Registration successful!");
 
+    
     setTimeout(() => {
       navigate("/");
     }, 1000);
@@ -27,7 +28,7 @@ function Signup() {
   return (
     <div className="bg-[#FCFAFA] h-[100vh] flex flex-col justify-center items-center">
       <Toaster position="top-right" reverseOrder={false} />
-      <h2 className="text-[36px] text-[#4F4F4F] font-semibold leading-[44px] mb-[53px]">Welcome , Sign up</h2>
+      <h2 className="text-[36px] text-[#4F4F4F] font-semibold leading-[44px] mb-[53px]">Welcome, Sign up</h2>
       <form onSubmit={handleSubmitSignup} className="w-[512px] bg-white flex flex-col justify-center items-center pt-[72px] pb-[100px]">
         <div className="w-[238px] text-center">
           <p className="text-[16px] text-[#667085] font-medium leading-[25px] mb-[34px]">
@@ -44,4 +45,3 @@ function Signup() {
 }
 
 export default Signup;
-

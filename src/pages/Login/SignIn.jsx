@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import { useContext, useState } from "react";
@@ -8,6 +8,7 @@ import { Context } from "../../context/Context";
 function SignIn() {
   const { setToken } = useContext(Context);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); 
 
   const defaultData = {
     login: "rahimbek",
@@ -29,6 +30,11 @@ function SignIn() {
       setToken(data);
       e.target.reset();
       toast.success("Muvaffaqiyatli !!!");
+      
+      // Navigate after 1 second
+      setTimeout(() => {
+        navigate("/"); // Change this to the desired path
+      }, 1000);
     } else {
       toast.error("Login yoki parol xato !!!");
     }
@@ -60,4 +66,5 @@ function SignIn() {
 }
 
 export default SignIn;
+
 
